@@ -3,6 +3,8 @@ const path = require('path')
 const app = new Express()
 const PORT = 3000
 
+console.log('Hello')
+
 const createPath = (page) => path.resolve(__dirname, `${page}.html`)
 
 const index = path.resolve(__dirname, 'task_ol_dz.html')
