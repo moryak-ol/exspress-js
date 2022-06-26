@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+        <h1>Список дел</h1>
+            <p>
+            <input id="text" type="text" placeholder="Написать....">
+            </p>
+            <p>
+                <button id="button" onclick="printResult();">Добавить</button>
+            </p>
+            <text id="result"></text>
+        <script>
+            function printResult() {
+                let list=document.getElementById('text').value;
+                let p = document.createElement("p");
+                p.innerHTML = list;
+                document.getElementById('result').append(p);
+            }
+        </script>
+    </body>
+</html>

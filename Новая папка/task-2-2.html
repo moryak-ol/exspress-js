@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+    </head>
+    <body>
+        <h1>Вычисление площади и периметра квадрата</h1>
+            <p>
+            <input id="number" type="number" min="1" placeholder="Сторона квадрата" list="numbList">
+            </p>
+            <p>
+                <button id="button" onclick="printResult();">Вычислить</button>
+            </p>
+            <text id="result"></text>
+        <script>
+            function square(num) {
+                return(num**2);
+            }
+            function perimeter(num) {
+                return(num*4); 
+            }
+            function printResult() {
+                let num=Number(document.getElementById('number').value);
+                if(num>0) {
+                    document.getElementById('result').innerHTML = "Площадь=" + square(num) + " Периметр=" + perimeter(num);
+                } 
+                else {
+                    document.getElementById('result').innerHTML = "Значение не может быть отрицательным или нулевым";
+                }
+            }
+        </script>
+    </body>
+</html>

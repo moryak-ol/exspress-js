@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="products"></div>
+</body>
+<script>
+    const API_URL='http://fakestoreapi.com/products'
+    const query= '?limit=10'
+    const url = API_URL + query
+    let productsNode=document.getElementsByClassName('products')[0]
+
+    fetch(url)
+        .then(res => res.json())
+        .then(
+            (result) => result.map(product => createCard(product))
+        )
+        .catch(error => {
+            console.log(error.message)
+        })
+    function createElement(tag, value,attrs) {
+        const elem=document.createElement(tag)
+
+    if(value)
+        elem.append(value)
+    
+    for (const attrName in attrs) {
+        elem.setAttribute(attrName, attrs[attrName])
+        }
+
+    return elem
+
+    }
+    
+</script>
+</html>
